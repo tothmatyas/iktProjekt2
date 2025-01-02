@@ -17,11 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from .controllers import index
+from .controllers import index, upload
 
 
 
 urlpatterns = [
     path('', index.index),
+    path('upload/', upload.upload),
+    path('upload/motherboard/', upload.motherboard),
     path('admin/', admin.site.urls),
 ]

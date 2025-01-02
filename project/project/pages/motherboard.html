@@ -1,0 +1,12 @@
+<form method="POST"  action="{% url 'motherboard' %}"  enctype="multipart/form-data" >   
+
+    {% csrf_token %}
+    <h1>nev</h1> <input type="text" name="name" maxlength="50" required="" id="id_name">
+    <h1>prod</h1><input type="text" name="product" maxlength="100" required="" id="id_product">
+    <h1>widi</h1>{{form.wiifAndBluetooth}}
+    <h1>lga</h1>{{form.socketIsLGA}}
+    <h1>size</h1>{{form.size}}
+    <h1>price</h1>{{form.price}}
+
+    <button type=upload>upload</button>
+</form>
