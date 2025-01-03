@@ -1,6 +1,5 @@
 from django.http import HttpResponseRedirect, HttpResponse, HttpRequest
-from django.shortcuts import render, redirect
-from . import views
+from django.shortcuts import render, redirect 
 from .forms import UploadMotherBoard
 
 def upload(request : HttpRequest):
@@ -18,9 +17,10 @@ def motherboard(request : HttpRequest):
     if request.POST:
         form = UploadMotherBoard(request.POST)
 
-        print(request.POST.get('name', False))
-
+        print(request.POST)
         if form.is_valid():
             form.save()
+        else:
+            print(form.errors)
 
     return render(request, "motherboard.html", {"form": UploadMotherBoard})
