@@ -23,7 +23,8 @@ from .controllers import index, upload
 
 urlpatterns = [
     path('', index.index),
-    path('upload/', upload.upload),
-    path('upload/motherboard/', upload.motherboard, name="uploadMotherBoard"),
+    path('explore/', upload.upload, name="upload"),
+     path('explore/upload/', upload.motherboard, name='f'),
+    path('explore/upload/<str:name>/', upload.motherboard, name="things"),
     path('admin/', admin.site.urls),
 ]

@@ -1,12 +1,116 @@
-<form method="POST" action={% url 'uploadMotherBoard' %} enctype="multipart/form-data" >   
 
+    {% comment %} ami ebbe van az akkor jelenik meg csak ha motherboard-ot akarunk feltolteni es ez csak az ifben levokre vonatkozik {% endcomment %}
+    {% if name == "motherboard" %}
+    
+        <form method="POST" action={% url "f" %} name='motherboard' enctype="multipart/form-data" >
+            <input type="text" name="name" maxlength="50" required="" id="id_name">
+            <input type="text" name="producer" maxlength="100" required="" id="id_producer">
+
+        {{form.wiifAndBluetooth}}
+        {{form.socketIsLGA}}
+            <select name="size" maxlength="3" required="" id="id_size">
+                <option value="ATX">ATX</option>
+                <option value="MC">Micro ATX</option>
+                <option value="MIN">Mini ITX</option>
+                <option value="E">EATX</option>
+        </select>
+
+    {% endif %}
+
+    {% if name == "cpu" %}
+
+        <form method="POST" action={% url "f" %} name="cpu" enctype="multipart/form-data" >
+            <input type="text" name="name" maxlength="50" required="" id="id_name">
+            <input type="text" name="producer" maxlength="100" required="" id="id_producer">
+    
+        {{form.clockSpeed}}
+        {{form.cores}}
+        {{form.socketIsLGA}}
+        {{form.overclocking}}
+    
+    {% endif %}
+
+    {% if name == 'gpu' %}
+
+        <form method="POST" action={% url "f" %} name="gpu" enctype="multipart/form-data" >
+            <input type="text" name="name" maxlength="50" required="" id="id_name">
+            <input type="text" name="producer" maxlength="100" required="" id="id_producer">
+    
+        {{form.vRam}}
+        {{form.size}}
+        {{form.consumption}}
+
+    {% endif %}
+    
+    {% if name == 'psu' %}
+
+        <form method="POST" action={% url "f" %} name="psu" enctype="multipart/form-data" >
+            <input type="text" name="name" maxlength="50" required="" id="id_name">
+            <input type="text" name="producer" maxlength="100" required="" id="id_producer">
+    
+        {{form.output}}
+        {{form.efficiency}}
+        {{form.fanSize}}
+    
+    {% endif %}
+
+    {% if name == 'ram' %}
+
+        <form method="POST" action={% url "f" %} name="ram" enctype="multipart/form-data" >
+            <input type="text" name="name" maxlength="50" required="" id="id_name">
+            <input type="text" name="producer" maxlength="100" required="" id="id_producer">
+    
+        <select name='ddr' maxlength='1'required='' id='id_ddr'>
+            <option value="DDR3">DDR3</option>
+            <option value="DDR4">DDR4</option>
+            <option value="DDR5">DDR5</option>
+        </select>
+        {{forms.capacity}}
+    
+    {% endif %}
+
+    {% if name == 'ssd' %}
+
+        <form method="POST" action={% url "f" %} name="ssd" enctype="multipart/form-data" >
+            <input type="text" name="name" maxlength="50" required="" id="id_name">
+            <input type="text" name="producer" maxlength="100" required="" id="id_producer">
+    
+        {{form.isSATA}}
+        {{form.capacity}}
+    
+    {% endif %}
+
+    {% if name == 'monitor' %}
+    
+        <form method="POST" action={% url "f" %} name="monitor" enctype="multipart/form-data" >
+            <input type="text" name="name" maxlength="50" required="" id="id_name">
+            <input type="text" name="producer" maxlength="100" required="" id="id_producer">
+            
+        {{form.refresh}}
+        {{form.size}}
+        <select name='resolution' maxlength='9' required='' id='id_resolution'>
+            <option value="FULLHD">1920x1080</option>
+            <option value="QHD">2560x1440</option>
+            <option value="ULTRAHD">3840x2160</option>
+        </select>
+
+    {% endif %}
+
+    {% if name == "mouse" %}
+    
+        <form method="POST" action={% url "f" %} name="mouse" enctype="multipart/form-data" >
+            <input type="text" name="name" maxlength="50" required="" id="id_name">
+            <input type="text" name="producer" maxlength="100" required="" id="id_producer">
+    
+        {{form.dpi}}
+        {{form.isWired}}
+
+    {% endif %}
+
+
+
+    {{form.description}}
+    {{form.price}}
     {% csrf_token %}
-    <h1>nev</h1> <input type="text" name="name" maxlength="50" required="" id="id_name">
-    <h1>prod</h1><input type="text" name="producer" maxlength="100" required="" id="id_producer">
-    <h1>widi</h1>{{form.wiifAndBluetooth}}
-    <h1>lga</h1>{{form.socketIsLGA}}
-    <h1>size</h1>{{form.size}}
-    <h1>price</h1>{{form.price}}
-
-    <button type=upload>upload</button>
+    <button type="submit">upload</button>
 </form>
