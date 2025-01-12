@@ -1,0 +1,14 @@
+C:\Users\david\source\repos\lol\bin\Debug\net8.0\lol.exe
+C:\Users\david\source\repos\lol\bin\Debug\net8.0\lol.deps.json
+C:\Users\david\source\repos\lol\bin\Debug\net8.0\lol.runtimeconfig.json
+C:\Users\david\source\repos\lol\bin\Debug\net8.0\lol.dll
+C:\Users\david\source\repos\lol\bin\Debug\net8.0\lol.pdb
+C:\Users\david\source\repos\lol\obj\Debug\net8.0\lol.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\david\source\repos\lol\obj\Debug\net8.0\lol.AssemblyInfoInputs.cache
+C:\Users\david\source\repos\lol\obj\Debug\net8.0\lol.AssemblyInfo.cs
+C:\Users\david\source\repos\lol\obj\Debug\net8.0\lol.csproj.CoreCompileInputs.cache
+C:\Users\david\source\repos\lol\obj\Debug\net8.0\lol.dll
+C:\Users\david\source\repos\lol\obj\Debug\net8.0\refint\lol.dll
+C:\Users\david\source\repos\lol\obj\Debug\net8.0\lol.pdb
+C:\Users\david\source\repos\lol\obj\Debug\net8.0\lol.genruntimeconfig.cache
+C:\Users\david\source\repos\lol\obj\Debug\net8.0\ref\lol.dll
