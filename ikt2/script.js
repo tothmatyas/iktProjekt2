@@ -396,11 +396,11 @@ function showCards() {
             case 'motherboard':
                 createCards(motherboards, 'motherboard-cards');
                 break;
-            case 'cpu':                         // Fixed from 'kepek/cpu/'
-                createCards(cpus, 'cpu-cards'); // Fixed from 'cpu'
+            case 'cpu':                         
+                createCards(cpus, 'cpu-cards'); 
                 break;
-            case 'ram':                         // Fixed from 'kepek/ram/'
-                createCards(rams, 'ram-cards'); // Fixed from 'ram'
+            case 'ram':                         
+                createCards(rams, 'ram-cards');
                 break;
             case 'gpu':
                 createCards(gpus, 'gpu-cards');
@@ -524,15 +524,15 @@ function showComparison() {
 }
 
 function resetComparison() {
-    // Clear selected items array
+    
     selectedItems = [];
     
-    // Remove selected class from all cards
+   
     document.querySelectorAll('.card').forEach(card => {
         card.classList.remove('selected');
     });
     
-    // Clear comparison results
+   
     document.getElementById('comparison-result').innerHTML = '';
 }
 
@@ -541,18 +541,18 @@ function toggleDescription(button) {
     const isHidden = description.style.display === 'none';
     description.style.display = isHidden ? 'block' : 'none';
     button.textContent = isHidden ? 'Leírás elrejtése' : 'Részletesebb leírás';
-    event.stopPropagation(); // Prevents card selection when clicking the button
+    event.stopPropagation(); 
 }
 
 function getProductDescription(item) {
-    // Add detailed descriptions based on product type
+    
     const descriptions = {
         'NVIDIA GTX 1650': 'Entry-level gaming GPU perfect for esports titles and 1080p gaming. Features NVIDIA Turing architecture and efficient power consumption.',
         'NVIDIA RTX 4060': 'Mid-range powerhouse with ray tracing capabilities. Excellent 1080p and 1440p gaming performance with DLSS support.',
         'NVIDIA RTX 4070 Ti SUPER': 'High-end gaming GPU with exceptional 4K performance. Features advanced ray tracing and AI-powered DLSS 3.0.',
         'Radeon RX 6600 XT': 'Powerful mid-range GPU optimized for 1080p and 1440p gaming. Features AMD FidelityFX Super Resolution technology.',
         'Radeon RX 7800 XT': 'Premium gaming GPU delivering excellent 4K performance. Includes AMD FSR 3.0 and advanced ray tracing capabilities.'
-        // Add more descriptions for other products
+        
     };
     
     return descriptions[item.name] || 'Detailed description coming soon.';
