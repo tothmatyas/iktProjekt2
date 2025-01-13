@@ -75,11 +75,11 @@ internal class Program
         {
             string[] param = new string[5];
 
-            param[0] = getUserInput("type", ["gpu", "cpu", "ram", "motherboard", "ssd", "mouse", "keyboard", "monitor"], "");
-            param[1] = getUserInput("name", [], "");
-            param[2] = getUserInput("price", [], "");
-            param[3] = getUserInput("description", [], "");
-            param[4] = getUserInput("image source", [], "link");
+            param[0] = getUserInput("Tipus", ["gpu", "cpu", "ram", "motherboard", "ssd", "mouse", "keyboard", "monitor"], "");
+            param[1] = getUserInput("Név", [], "");
+            param[2] = getUserInput("Ár", [], "");
+            param[3] = getUserInput("Leírás", [], "");
+            param[4] = getUserInput("Kép forrása", [], "link");
 
             return param;
         }
